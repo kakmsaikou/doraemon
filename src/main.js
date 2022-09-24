@@ -114,7 +114,7 @@ const str = `
 
 .mustache-list li {
   width: 90px;
-  height: 5px;
+  height: 2px;
   background-color: #000;
   position: relative;
 }
@@ -122,6 +122,10 @@ const str = `
 .mustache-list li:first-child {
   transform: rotate(15deg);
   top: -1.75em;
+}
+
+.mustache-list li:nth-child(2) {
+  height: 3px
 }
 
 .mustache-list li:last-child {
@@ -482,7 +486,7 @@ const str = `
   min-width: 140px;
   min-height: 140px;
   border-radius: 50%;
-  background-color: #fc3;
+  background-color: #fff;
   position: absolute;
   top: 98px;
   left: 8px;
@@ -529,10 +533,11 @@ const str = `
 const player = {
   id: undefined,
   n: 1,
-  interval: 10,
+  str: '',
+  interval: 5,
   ui: {
-    demo: document.querySelector('#demo'),
-    demo2: document.querySelector('#demo2')
+    html: document.querySelector('#html'),
+    style: document.querySelector('#style')
   },
   events: {
     '#btnPause': 'pause',
@@ -543,8 +548,6 @@ const player = {
     '#finish': 'finish'
   },
   init: () => {
-    player.ui.demo.innerText = str.substring(0, player.n)
-    player.ui.demo2.innerHTML = str.substring(0, player.n)
     player.bindEvents()
     player.play()
   },
@@ -556,14 +559,27 @@ const player = {
     }
   },
   run: () => {
-    player.n += 1
-    if (player.n > str.length) {
+    if (player.n >= str.length) {
       window.clearInterval(player.id)
       return
     }
-    player.ui.demo.innerText = str.substring(0, player.n)
-    player.ui.demo2.innerHTML = str.substring(0, player.n)
-    player.ui.demo.scrollTop = player.ui.demo.scrollHeight
+
+    switch (str[player.n]) {
+      case '\n':
+        player.str += '<br>'
+        break
+      case ' ':
+        player.str += '&nbsp'
+        break
+      default:
+        player.str += str[player.n]
+    }
+
+    player.ui.html.innerHTML = player.str
+    player.ui.style.innerHTML = str.substring(0, player.n)
+    player.ui.html.scrollTop = player.ui.html.scrollHeight
+
+    player.n++
   },
   play: () => {
     player.id = setInterval(player.run, player.interval)
@@ -573,12 +589,12 @@ const player = {
   },
   slow: () => {
     player.pause()
-    player.interval = 100
+    player.interval = 10
     player.play()
   },
   normal: () => {
     player.pause()
-    player.interval = 10
+    player.interval = 5
     player.play()
   },
   fast: () => {
@@ -588,9 +604,22 @@ const player = {
   },
   finish: () => {
     player.pause()
-    player.ui.demo.innerText = str
-    player.ui.demo2.innerHTML = str
-    player.ui.demo.scrollTop = player.ui.demo.scrollHeight
+    while (player.n < str.length) {
+      switch (str[player.n]) {
+        case '\n':
+          player.str += '<br>'
+          break
+        case ' ':
+          player.str += '&nbsp'
+          break
+        default:
+          player.str += str[player.n]
+      }
+      player.n++
+    }
+    player.ui.html.innerHTML = player.str
+    player.ui.style.innerHTML = str.substring(0, player.n)
+    player.ui.html.scrollTop = player.ui.html.scrollHeight
   }
 }
 
