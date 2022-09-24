@@ -45,14 +45,6 @@ const str = `
   animation: eye-close 6s 5s infinite;
 }
 
-@keyframes eye-close {
-  0%, 3%, 6%, 100% {
-    height: 100%;
-  }
-  1.5%, 4.5% {
-    height: 5%;
-  }
-}
 
 .pupil {
   position: absolute;
