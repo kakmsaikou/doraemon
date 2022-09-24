@@ -561,6 +561,7 @@ const player = {
   run: () => {
     if (player.n >= str.length) {
       window.clearInterval(player.id)
+      player.bindEyeMoveEvent()
       return
     }
 
@@ -620,6 +621,53 @@ const player = {
     player.ui.html.innerHTML = player.str
     player.ui.style.innerHTML = str.substring(0, player.n)
     player.ui.html.scrollTop = player.ui.html.scrollHeight
+    player.bindEyeMoveEvent()
+  },
+
+  bindEyeMoveEvent: () => {
+    const eye = document.querySelectorAll('.eye')
+    for (let i = 0, len = eye.length; i < len; i += 1) {
+      eye[i].innerEye = eye[i].querySelector('.pupil')
+    }
+
+    function getOffsetCenter(el) {
+      let x = el.offsetWidth / 2
+      let y = el.offsetHeight / 2
+      do {
+        x += el.offsetLeft
+        y += el.offsetTop
+      } while (el = el.offsetParent)
+      return {x, y}
+    }
+
+    function eyeMover(event) {
+      event = event || window.event
+      let coorX, coorY
+      if (event.touches && event.touches.length === 1) {
+        event.preventDefault()
+        coorX = event.touches[0].clientX
+        coorY = event.touches[0].clientY
+      } else {
+        coorX = event.clientX || event.pageX
+        coorY = event.clientY || event.pageY
+      }
+      const screenX = window.innerWidth / 2
+      const screenY = window.innerWidth / 2
+      for (let i = 0, len = eye.length; i < len; i += 1) {
+        const offset = getOffsetCenter(eye[i])
+        const eyeCoorX = coorX - offset.x
+        const eyeCoorY = coorY - offset.y
+        eye[i].innerEye.style.left = ((eyeCoorX / screenX) * 50) + '%'
+        eye[i].innerEye.style.top = ((eyeCoorY / screenY) * 50) + '%'
+      }
+    }
+
+    if (document.addEventListener) {
+      document.addEventListener('touchmove', eyeMover)
+      document.addEventListener('mousemove', eyeMover)
+    } else {
+      document.onmousemove = eyeMover
+    }
   }
 }
 
