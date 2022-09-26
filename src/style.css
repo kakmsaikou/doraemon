@@ -265,6 +265,13 @@ body, html {
   z-index: 1
 }
 
+.arm.right::before {
+ content: '';
+ display: block;
+ position: absolute;
+ z-index: 3;
+}
+
 .arm.right::after {
   content: '';
   display: block;
