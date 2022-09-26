@@ -1,78 +1,31 @@
 const str = `
 .head {
-  width: 384px;
-  height: 358px;
   border: 2px solid #000;
   border-radius: 50%;
-  position: absolute;
   left: 63px;
   top: 20px;
-  overflow: hidden;
   background-color: #0097e3;
-  z-index: 3;
-}
-
-.eye-wrap {
-  position: absolute;
-}
-
-.eye-wrap.left {
-  left: 73px;
-  top: 35px;
-  width: 87px;
-  height: 106px;
-}
-
-.eye-wrap.right {
-  left: 157px;
-  top: 42px;
-  width: 88px;
-  height: 110px;
 }
 
 .eye {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
   background-color: #fff;
   border-radius: 50%;
   border: 2px solid #000;
-  overflow: hidden;
-  z-index: 3;
   animation: eye-close 6s 5s infinite;
 }
 
-
 .pupil {
-  position: absolute;
   width: 25px;
   height: 35px;
   background-color: #000;
   border-radius: 50%;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
 }
 
 .pupil::after {
-  display: block;
-  content: '';
   width: 7px;
   height: 14px;
   background-color: #fff;
-  z-index: 2;
   border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
 }
 
 .nose {
@@ -81,43 +34,22 @@ const str = `
   border-radius: 50%;
   border: 2px solid #000;
   background-color: #e40224;
-  position: absolute;
-  left: 115px;
-  top: 123px;
-  z-index: 3;
 }
 
 .nose::after {
-  display: block;
-  content: '';
   background-color: #fff;
   border-radius: 50%;
   width: 22px;
   height: 22px;
-  position: absolute;
-  left: 11px;
-  top: 11px;
-}
-
-.mustache-list {
-  position: absolute;
-  z-index: 3;
 }
 
 .mustache-list li {
-  width: 90px;
-  height: 2px;
   background-color: #000;
-  position: relative;
 }
 
 .mustache-list li:first-child {
   transform: rotate(15deg);
   top: -1.75em;
-}
-
-.mustache-list li:nth-child(2) {
-  height: 3px
 }
 
 .mustache-list li:last-child {
@@ -138,60 +70,47 @@ const str = `
 }
 
 .mouth {
+  background-color: #fff;
   width: 340px;
   height: 280px;
-  background-color: #fff;
   border-radius: 50%;
   left: 7px;
   top: 85px;
-  position: absolute;
   border: 2px solid #000;
-  z-index: 1;
-  overflow: auto;
   transform: rotate(5deg)
 }
 
 .philtrum {
-  position: absolute;
   min-height: 150px;
   min-width: 50px;
   border-radius: 50%;
   border: 2px solid transparent;
   border-left-color: #000;
-  color: transparent;
   left: 126px;
   top: 60px;
-  z-index: 5;
 }
 
 .lips {
+  border: 2px solid #000;
   width: 285px;
   height: 200px;
-  border: 2px solid #000;
   border-radius: 50%;
   margin-left: 5px;
-  position: relative;
-  z-index: 3;
   transform: rotate(-10deg);
 }
 
 .lips::before {
-  content: '';
-  display: block;
+  background-color: #fff;
   width: 305px;
   height: 105px;
-  background-color: #fff;
-  position: absolute;
   left: -2px;
 }
 
 .dimple {
+  border: 2px solid #000;
   width: 50px;
   height: 50px;
-  border: 2px solid #000;
   border-radius: 50%;
-  position: absolute;
-  z-index: 6;
   top: 105px;
   left: 9px;
   border-right-color: transparent;
@@ -200,12 +119,11 @@ const str = `
 }
 
 .necklace {
+  background-color: #d9011a;
   width: 255px;
   height: 80px;
-  background-color: #d9011a;
   border: 2px solid #000;
   border-radius: 50%;
-  position: absolute;
   left: 123px;
   top: 305px;
   transform: rotate(2deg);
@@ -213,98 +131,70 @@ const str = `
 }
 
 .drop {
+  border: 2px solid #000;
   width: 55px;
   height: 55px;
-  border: 2px solid #000;
   background-color: #f5cc07;
   border-radius: 50%;
-  position: absolute;
   top: 68px;
   left: 50px;
-  overflow: hidden;
 }
 
 .drop::before {
-  content: '';
-  display: block;
-  position: absolute;
+  border: 2px solid #000;
   width: 17px;
   height: 8px;
-  border: 2px solid #000;
   border-radius: 50%;
   background-color: #665a4c;
   left: .5em;
   top: 25px;
-  z-index: 3;
 }
 
 .drop::after {
-  content: '';
-  display: block;
-  border-radius: 50%;
   border: 2px solid #000;
+  border-radius: 50%;
   border-top-color: transparent;
   color: transparent;
   border-right-color: transparent;
-  min-width: 35px;
-  min-height: 35px;
-  position: absolute;
   bottom: -4px;
   left: 15px;
   transform: rotate(-17deg);
 }
 
 .drop-line {
-  position: absolute;
-  left: -140%;
-  top: 10px;
-  min-width: 170px;
-  min-height: 170px;
-  border-radius: 50%;
   border: 2px solid transparent;
   border-top-color: #000;
+  left: -140%;
+  top: 10px;
+  border-radius: 50%;
 }
 
 .drop-line:nth-of-type(2) {
   top: 18px;
 }
 
-.body {
-  width: 250px;
-  height: 280px;
-  position: absolute;
-  left: 120px;
-  top: 255px;
-  z-index: 1;
-}
-
 .trunk {
+  background-color: #0097e3;
+  border: 2px solid #000;
   border-radius: 50%;
   width: 100%;
   height: 100%;
-  position: relative;
-  background-color: #0097e3;
-  border: 2px solid #000;
   border-right-color: transparent;
   border-bottom-color: transparent;
 }
 
 .stomach {
+  border: 2px solid #000;
   width: 175px;
   height: 145px;
-  position: absolute;
   background-color: #fff;
   border-radius: 50%;
-  border: 2px solid #000;
   left: 10px;
   top: 95px;
   transform: rotate(15deg);
-  overflow: hidden;
-  z-index: 1
 }
 
 .pocket {
-  position: absolute;
   width: 90%;
   height: 90%;
   border: 2px solid #000;
@@ -314,31 +204,22 @@ const str = `
 }
 
 .pocket::after {
-  content: '';
-  position: absolute;
-  left: -25px;
-  top: -10px;
-  display: inline-block;
-  min-width: 169px;
-  transform: rotate(-10deg);
-  min-height: 65px;
-  padding: 0.5em;
-  border-radius: 50%;
   border: 2px solid transparent;
   border-bottom-color: #000;
+  left: -25px;
+  top: -10px;
+  transform: rotate(-10deg);
+  padding: 0.5em;
+  border-radius: 50%;
   background-color: #fff;
 }
 
 .hand {
-  display: block;
-  content: '';
+  border: 2px solid #000;
   width: 70px;
   height: 70px;
   background-color: #fff;
   border-radius: 50%;
-  position: absolute;
-  z-index: -1;
-  border: 2px solid #000;
   top: 175px;
   left: 270px;
 }
@@ -348,16 +229,14 @@ const str = `
 }
 
 .arm.right {
-  position: absolute;
+  border: 2px solid #000;
   width: 70px;
   height: 120px;
   border-radius: 40%;
   right: -55px;
-  border: 2px solid #000;
   background-color: #0097e3;
   top: 90px;
   transform: rotate(-30deg);
-  z-index: 1
 }
 
 .arm.right::before {
@@ -374,23 +253,18 @@ const str = `
 }
 
 .arm.right::after {
-  content: '';
-  display: block;
+  background-color: #0097e3;
   width: 40px;
   height: 95px;
-  background-color: #0097e3;
   border-radius: 50%;
   border: 2px solid transparent;
   border-left-color: #000;
   transform: rotate(-7deg);
-  position: absolute;
   top: 6px;
   left: -12px;
 }
 
 .arm.left {
-  z-index: -1;
-  position: absolute;
   border-radius: 50%;
   width: 45px;
   height: 65px;
@@ -401,47 +275,37 @@ const str = `
 }
 
 .trunk::before {
-  display: block;
-  content: '';
   width: 20px;
   height: 20px;
   background-color: #0097e3;
-  position: absolute;
   top: 85px;
   left: 0;
-  z-index: 3;
 }
 
 .trunk::after {
-  display: block;
-  content: '';
+  background-color: #0097e3;
   width: 110px;
   height: 145px;
-  background-color: #0097e3;
-  position: absolute;
   top: 110px;
   left: 1px;
   transform: rotate(15deg);
 }
 
 .leg.left {
+  background-color: #0097e3;
   width: 120px;
   height: 110px;
-  background-color: #0097e3;
-  position: absolute;
   border: 2px solid #000;
   left: 95px;
   top: 430px;
 }
 
 .foot {
+  background-color: #fff;
   width: 105px;
   height: 160px;
-  background-color: #fff;
-  position: absolute;
   border: 2px solid #000;
   border-radius: 50%;
-  z-index: 10
 }
 
 .leg.left .foot {
@@ -459,12 +323,7 @@ const str = `
 }
 
 .leg.left::before{
-  display: block;
-  content: '';
-  min-width: 45px;
-  min-height: 45px;
   border-radius: 50%;
-  position: absolute;
   left: -10px;
   top: -10px;
   background-color: #0097e3;
@@ -473,49 +332,31 @@ const str = `
 }
 
 .leg.left::after{
-  display: block;
-  content: '';
-  min-width: 140px;
-  min-height: 140px;
   border-radius: 50%;
   background-color: #fff;
-  position: absolute;
   top: 98px;
   left: 8px;
   border: 2px solid transparent;
   border-top-color: #000;
-  z-index: 3;
-}
-
-.right-padding{
-  position: absolute;
-  z-index: 8;
-  top: 455px;
-  left: 288px;
 }
 
 .right-padding::before{
-  display: block;
-  content: '';
+  background-color: #0097e3;
   width: 30px;
   height: 30px;
-  background-color: #0097e3;
   border: 2px solid transparent;
   border-top-color: #000;
-  position: absolute;
   left: 0;
   top: 0;
-  z-index: -1;
   transform: rotate(-15deg);
 }
 
 .leg.right{
+  border: 2px solid #000;
   width: 75px;
   height: 160px;
-  border: 2px solid #000;
   border-radius: 50%;
   background-color: #0097e3;
-  position: absolute;
   left: 290px;
   top: 410px;
   transform: rotate(20deg)

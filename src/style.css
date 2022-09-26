@@ -64,3 +64,271 @@ body, html {
     height: 5%;
   }
 }
+
+.head {
+  width: 384px;
+  height: 358px;
+  position: absolute;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.eye-wrap {
+  position: absolute;
+}
+
+.eye-wrap.left {
+  left: 73px;
+  top: 35px;
+  width: 87px;
+  height: 106px;
+}
+
+.eye-wrap.right {
+  left: 157px;
+  top: 42px;
+  width: 88px;
+  height: 110px;
+}
+
+.eye {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.pupil {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.pupil::after {
+  display: block;
+  content: '';
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.nose {
+  position: absolute;
+  left: 115px;
+  top: 123px;
+  z-index: 3;
+}
+
+.nose::after {
+  display: block;
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 11px;
+}
+
+.mustache-list {
+  position: absolute;
+  z-index: 3;
+}
+
+.mustache-list li {
+  position: relative;
+  width: 90px;
+  height: 2px;
+}
+
+.mustache-list li:nth-child(2) {
+  height: 3px
+}
+
+.mouth {
+  position: absolute;
+  z-index: 1;
+  overflow: auto;
+}
+
+.philtrum {
+  position: absolute;
+  color: transparent;
+  z-index: 5;
+}
+
+.lips {
+  position: relative;
+  z-index: 3;
+}
+
+.lips::before {
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+.dimple {
+  position: absolute;
+  z-index: 6;
+}
+
+.necklace {
+  position: absolute;
+}
+
+.drop {
+  position: absolute;
+  overflow: hidden;
+}
+
+.drop::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 3;
+}
+
+.drop::after {
+  content: '';
+  display: block;
+  min-width: 35px;
+  min-height: 35px;
+  position: absolute;
+}
+
+.drop-line {
+  position: absolute;
+  left: -140%;
+  top: 10px;
+  min-width: 170px;
+  min-height: 170px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #000;
+}
+
+.drop-line {
+  position: absolute;
+  min-width: 170px;
+  min-height: 170px;
+}
+
+.body {
+  width: 250px;
+  height: 280px;
+  position: absolute;
+  left: 120px;
+  top: 255px;
+  z-index: 1;
+}
+
+.trunk {
+  position: relative;
+}
+
+.stomach {
+  position: absolute;
+  overflow: hidden;
+  z-index: 1
+}
+
+.pocket {
+  position: absolute;
+}
+
+.pocket::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  min-width: 169px;
+  min-height: 65px;
+}
+
+.hand {
+  display: block;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+.arm.right {
+  position: absolute;
+  z-index: 1
+}
+
+.arm.right::after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+.arm.left {
+  z-index: -1;
+  position: absolute;
+}
+
+.trunk::before {
+  display: block;
+  content: '';
+  position: absolute;
+  z-index: 3;
+}
+
+.trunk::after {
+  display: block;
+  content: '';
+  position: absolute;
+}
+
+.leg.left {
+  position: absolute;
+}
+
+.foot {
+  position: absolute;
+  z-index: 10
+}
+
+.leg.left::before {
+  display: block;
+  content: '';
+  min-width: 45px;
+  min-height: 45px;
+  position: absolute;
+}
+
+.leg.left::after {
+  display: block;
+  content: '';
+  min-width: 140px;
+  min-height: 140px;
+  position: absolute;
+  z-index: 3;
+}
+
+.right-padding {
+  position: absolute;
+  z-index: 8;
+  top: 455px;
+  left: 288px;
+}
+
+.right-padding::before {
+  display: block;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+.leg.right {
+  position: absolute;
+}
